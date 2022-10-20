@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <!-- List -->
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="ru.iubip.catsapp.ui.ListFragment"
+        android:label="fragment_list">
+        <action
+            android:id="@+id/action_listFragment_to_listDetailsFragment"
+            app:destination="@id/listDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listDetailsFragment"
+        android:name="ru.iubip.catsapp.ui.ListDetailsFragment"
+        android:label="fragment_list_details" />
+
+
+    <!-- Featured -->
+    <fragment
+        android:id="@+id/featuredFragment"
+        android:name="ru.iubip.catsapp.ui.FeaturedFragment"
+        android:label="fragment_featured">
+        <action
+            android:id="@+id/action_featuredFragment_to_featuredDetailsFragment"
+            app:destination="@id/featuredDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/featuredDetailsFragment"
+        android:name="ru.iubip.catsapp.ui.FeaturedDetailsFragment"
+        android:label="fragment_featured_details" />
+
+    <!-- Upload -->
+    <fragment
+        android:id="@+id/uploadFragment"
+        android:name="ru.iubip.catsapp.ui.UploadFragment"
+        android:label="fragment_upload"/>
+
+</navigation>
