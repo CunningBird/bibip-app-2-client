@@ -7,7 +7,7 @@
     <!-- List -->
     <fragment
         android:id="@+id/listFragment"
-        android:name="ru.iubip.catsapp.ui.ListFragment"
+        android:name="ru.iubip.catsapp.ui.list.ListFragment"
         android:label="fragment_list">
         <action
             android:id="@+id/action_listFragment_to_listDetailsFragment"
@@ -15,14 +15,14 @@
     </fragment>
     <fragment
         android:id="@+id/listDetailsFragment"
-        android:name="ru.iubip.catsapp.ui.ListDetailsFragment"
+        android:name="ru.iubip.catsapp.ui.list.ListDetailsFragment"
         android:label="fragment_list_details" />
 
 
     <!-- Featured -->
     <fragment
         android:id="@+id/featuredFragment"
-        android:name="ru.iubip.catsapp.ui.FeaturedFragment"
+        android:name="ru.iubip.catsapp.ui.featrued.FeaturedFragment"
         android:label="fragment_featured">
         <action
             android:id="@+id/action_featuredFragment_to_featuredDetailsFragment"
@@ -30,13 +30,13 @@
     </fragment>
     <fragment
         android:id="@+id/featuredDetailsFragment"
-        android:name="ru.iubip.catsapp.ui.FeaturedDetailsFragment"
+        android:name="ru.iubip.catsapp.ui.featrued.FeaturedDetailsFragment"
         android:label="fragment_featured_details" />
 
     <!-- Upload -->
     <fragment
         android:id="@+id/uploadFragment"
-        android:name="ru.iubip.catsapp.ui.UploadFragment"
+        android:name="ru.iubip.catsapp.ui.upload.UploadFragment"
         android:label="fragment_upload"/>
 
 </navigation>

@@ -1,4 +1,4 @@
-package ru.iubip.catsapp.ui
+package ru.iubip.catsapp.ui.featrued
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ru.iubip.catsapp.R
+import ru.iubip.catsapp.ui.MainActivity
 import ru.iubip.catsapp.usecases.FeaturedUsecase
 
 class FeaturedDetailsFragment : Fragment(R.layout.fragment_featured_details) {

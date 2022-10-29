@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import ru.iubip.catsapp.R
@@ -19,12 +21,23 @@ import ru.iubip.catsapp.usecases.UploadUsecase
 
 class MainActivity : AppCompatActivity() {
 
-    private val flex = Retrofit.Builder()
+    private var client: CatsApi = Retrofit.Builder()
         .baseUrl("https://api.thecatapi.com/v1/")
         .addConverterFactory(MoshiConverterFactory.create())
+        .client(
+            OkHttpClient.Builder()
+                .addInterceptor(Interceptor { chain ->
+                    val original = chain.request()
+                    val request = original.newBuilder()
+                        .header("x-api-key", "live_OE3h2ea9EyMrTfh3I1xs1I2BZC85tpyG2ZRJN69AcLrKwc2PyRGnH0ucNdgdETtl")
+                        .method(original.method, original.body)
+                        .build()
+                    chain.proceed(request)
+                })
+                .build()
+        )
         .build()
-
-    private var client: CatsApi = flex.create(CatsApi::class.java)
+        .create(CatsApi::class.java)
 
     private val listRepository = ListRepository(client)
     private val featuredRepository = FeaturedRepository()
